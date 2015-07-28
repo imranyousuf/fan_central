@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_movie
+  before_action :set_event
   before_action :authenticate_user!
 
   def new
@@ -13,7 +13,8 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-    @review.movie_id = @event.id
+    @review.event_id = @event.id
+   
 
     if @review.save
       redirect_to @event
@@ -36,9 +37,10 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
     end
 
-    def set_movie
-      @event = Event.find(params[:movie_id])
+    def set_event
+      @event = Event.find(params[:event_id])
     end
+
 
     def review_params
       params.require(:review).permit(:rating, :comment)
