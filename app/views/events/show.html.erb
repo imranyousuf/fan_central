@@ -1,40 +1,48 @@
-<%= image_tag @event.image.url(:medium) %>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Event time:</strong>
-  <%= @event.event_time %>
-</p>
-
-<p>
-  <strong>Event date:</strong>
-  <%= @event.event_date %>
-</p>
-
-<p>
-  <strong>Event locaton:</strong>
-  <%= @event.event_locaton %>
-</p>
-
-<p>
-  <strong>Performer:</strong>
-  <%= @event.performer %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @event.rating %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @event.image.url(:medium) %>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong>Title:</strong></td>
+                <td><%= @event.title %></td>
+              </tr>
+              <tr>
+                <td><strong>Description:</strong></td>
+                <td><%= @event.description %></td>
+              </tr>
+              <tr>
+                <td><strong>Event time:</strong></td>
+                <td><%= @event.event_time %></td>
+              </tr>
+              <tr>
+                <td><strong>Event date:</strong></td>
+                <td><%= @event.event_date %></td>
+              </tr>
+              <tr>
+              <tr>
+                <td><strong>Event locaton:</strong></td>
+                <td><%= @event.event_locaton %></td>
+              </tr>
+              <tr>
+              <tr>
+                <td><strong>Performer:strong></td>
+                <td><%= @event.performer %></td>
+              </tr>
+              <tr>
+                <td><strong>Rating:</strong></td>
+                <td><%= @event.rating %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', event_path %>
