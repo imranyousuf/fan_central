@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730070326) do
+ActiveRecord::Schema.define(version: 20150730165941) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20150730070326) do
     t.string   "lat"
     t.string   "lon"
     t.string   "tags"
+    t.integer  "mintime"
+    t.integer  "maxtime"
   end
 
   create_table "reviews", force: :cascade do |t|

@@ -30,6 +30,8 @@
           <div class="form-group" style="color:#777">
             <%= f.label :event_date %><br>
             <%= f.date_select :event_date , autofocus: true, class: "form-control"%>
+            <%= f.text_field :mintime , autofocus: true, class: "form-control", placeholder: "Unix Min time"%>
+            <%= f.text_field :maxtime , autofocus: true, class: "form-control", placeholder: "Unix Max time"%>
           </div>
           <div class="form-group" style="color:#777">
             <%= f.label :event_locaton %><br>

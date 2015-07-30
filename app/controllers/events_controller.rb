@@ -18,7 +18,7 @@ class EventsController < ApplicationController
 
   def show
     @instagram2 = Instagram.tag_recent_media(@event.tags, {:count => 10})
-    @instagram = Instagram.media_search(@event.lat,@event.lon, :min_timestamp => 1338092800, :max_timestamp => 1438279200, :count => 10)
+    @instagram = Instagram.media_search(@event.lat,@event.lon, :min_timestamp => @event.mintime, :max_timestamp => @event.maxtime, :count => 15)
 
     @reviews = Review.where(event_id: @event.id).order("created_at DESC")
 
@@ -87,6 +87,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :description, :event_time, :event_date, :event_locaton, :performer, :rating, :image, :lat, :lon, :tags)
+      params.require(:event).permit(:title, :description, :event_time, :event_date, :event_locaton, :performer, :rating, :image, :lat, :lon, :tags, :mintime, :maxtime)
     end
 end
