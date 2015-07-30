@@ -1,52 +1,59 @@
-<%= form_for(@event) do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="col-md-8 col-md-offset-2">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= form_for(@event) do |f| %>
+          <% if @event.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-      <% @event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+              <ul>
+              <% @event.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
 
-  <div class="field" style="color:white">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field" style="color:white">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field" style="color:white">
-    <%= f.label :event_time %><br>
-    <%= f.time_select :event_time %>
-  </div>
-  <div class="field" style="color:white">
-    <%= f.label :event_date %><br>
-    <%= f.date_select :event_date %>
-  </div>
-  <div class="field" style="color:white">
-    <%= f.label :event_locaton %><br>
-    <%= f.text_field :event_locaton %>
-    <%= f.text_field :lat %>
-    <%= f.text_field :lon %>
+          <div class="form-group" style="color:#777;">
+            <%= f.label :title %><br>
+            <%= f.text_field :title , autofocus: true, class: "form-control"%>
+          </div>
+          <div class="form-group" style="color:#777">
+            <%= f.label :description %><br>
+            <%= f.text_area :description , autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-group" style="color:#777">
+            <%= f.label :event_time %><br>
+            <%= f.time_select :event_time ,autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-group" style="color:#777">
+            <%= f.label :event_date %><br>
+            <%= f.date_select :event_date , autofocus: true, class: "form-control"%>
+          </div>
+          <div class="form-group" style="color:#777">
+            <%= f.label :event_locaton %><br>
+            <%= f.text_field :event_locaton , autofocus: true, class: "form-control", placeholder: "Name of the Venue" %>
+            <%= f.text_field :lat , autofocus: true, class: "form-control", placeholder: "Latitude"%>
+            <%= f.text_field :lon , autofocus: true, class: "form-control", placeholder: "Longitude"%>
 
+          </div>
+          <div class="form-group" style="color:#777">
+            <%= f.label :performer %><br>
+            <%= f.text_field :performer , autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-group" style="color:#777">
+            <%= f.label :Tags %><br>
+            <%= f.text_field :tags , autofocus: true, class: "form-control", placeholder: "Hashtags e.g giants"%>
+          </div>
+          <div class="form-group" style="color:#777">
+            <%= f.label :image %><br>
+            <%= f.file_field :image %>
+          </div>
+          <center>
+          <div class="actions">
+            <%= f.submit "Create Event", class: "btn btn-primary"%>
+          </div>
+          </center>
+        <% end %>
   </div>
-  <div class="field" style="color:white">
-    <%= f.label :performer %><br>
-    <%= f.text_field :performer %>
-  </div>
-  <div class="field" style="color:white">
-    <%= f.label :Tags %><br>
-    <%= f.text_field :tags%>
-  </div>
-  <div class="field" style="color:white">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
