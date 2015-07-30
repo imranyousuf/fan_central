@@ -14,6 +14,7 @@ gem "paperclip", "~> 4.3"
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'searchkick', '~> 0.9.0'
 gem 'instagram', '~> 1.1.5'
+gem 'owlcarousel-rails'
 
 
 group :development, :test do
