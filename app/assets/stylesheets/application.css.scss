@@ -2,7 +2,7 @@
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
- * Any CSS and SCSS file within this #003168 directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * Any CSS and SCSS file within this #003168 #d78194 directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
@@ -20,7 +20,20 @@
 @import "bootstrap";
 
 body {
-	background: #d78194;
+	background: #003168;
+}
+
+h1{
+	color:#777;
+}
+h2{
+	color:#777;
+}
+h3{
+	color:#777;
+}
+p{
+	color:#777;
 }
 
 .review_title {
