@@ -15,24 +15,47 @@
             <%= image_tag instagram.images.thumbnail.url %>
           <% end %>
         </div>
+          <iframe width="550" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBqYJdZitdg7oOuufOsidxT6hbzpuC3Tro%20&q=<%= @event.lat %> ,<%= @event.lon %>"></iframe>
+        <h2>Game Details</h2>
         <div class="table-responsive">
           <table class="table">
             <tbody>
               <tr>
-                <td>
-                </div>
-                <br>
-                <br>
-                </td>
+                <td><strong>Title:</strong></td>
+                <td><%= @event.title %></td>
               </tr>
               <tr>
-                <td>
-                </div>
-                </td>
+                <td><strong>Description:</strong></td>
+                <td><%= @event.description %></td>
+              </tr>
+              <tr>
+                <td><strong>Event time:</strong></td>
+                <td><%= @event.event_time %></td>
+              </tr>
+              <tr>
+                <td><strong>Event date:</strong></td>
+                <td><%= @event.event_date %></td>
+              </tr>
+              <tr>
+              <tr>
+                <td><strong>Event locaton:</strong></td>
+                <td><%= @event.event_locaton %></td>
+              </tr>
+              <tr>
+              <tr>
+                <td><strong>Performer</strong></td>
+                <td><%= @event.performer %></td>
+              </tr>
+              <tr>
+                <td><strong>Rating:</strong></td>
+                <td><%= @event.rating %></td>
+              </tr>
+              <tr>
+                <td><strong>Longitude & Latitude</strong></td>
+                <td>"<%= @event.lat %> ,<%= @event.lon %>"</td>
               </tr>
             </tbody>
           </table>
-          <iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBqYJdZitdg7oOuufOsidxT6hbzpuC3Tro%20&q=<%= @event.lat %> ,<%= @event.lon %>"></iframe>
         </div>
       </div>
       <div class="col-md-5 ">
