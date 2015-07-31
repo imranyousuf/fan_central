@@ -17,8 +17,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    @instagram2 = Instagram.tag_recent_media(@event.tags, {:count => 10})
-    @instagram = Instagram.media_search(@event.lat,@event.lon, :min_timestamp => @event.mintime, :max_timestamp => @event.maxtime, :count => 15)
+    @instagram2 = Instagram.tag_recent_media(@event.tags, {:count => 20})
+    @instagram = Instagram.media_search(@event.lat,@event.lon, :min_timestamp => @event.mintime, :max_timestamp => @event.maxtime, :count => 20)
 
     @reviews = Review.where(event_id: @event.id).order("created_at DESC")
 
